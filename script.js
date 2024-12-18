@@ -5,6 +5,8 @@ let rate = 5;
 let hanldePickStart = (e) => {
     let pickedRate = e.target.textContent
     rate = pickedRate
+    starts.forEach(el => el.setAttribute('aria-checked' , false))
+    e.target.setAttribute('aria-checked' , true)
 }
 let hanldeSubmit = (e) => {
     main.toggleAttribute("submited")
