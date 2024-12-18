@@ -30,7 +30,7 @@ main {
 
 .card {
     width: 100%;
-    max-width: 25vw;
+    max-width: 30vw;
     background-image: linear-gradient(to bottom, #232A34, #181E27);
     display: flex;
     flex-flow: column nowrap;
