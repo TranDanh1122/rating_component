@@ -1,11 +1,167 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html,body{
+
+html,
+body {
     width: 100%;
     height: 100%;
     font-size: 16px;
     font-family: "Overpass", sans-serif;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light_grey: hsl(217, 12%, 63%);
+    --dark_blue: hsl(213, 19%, 18%);
+    --very_dark_blue: hsl(216, 12%, 8%);
+    --orange: hsl(25, 97%, 53%);
+}
+
+main {
+    background-color: var(--very_dark_blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    width: 100%;
+    max-width: 25vw;
+    background-image: linear-gradient(to bottom, #232A34, #181E27);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.card[submited] {
+    display: none;
+}
+
+main[submited] .card {
+    display: none;
+}
+
+main[submited] .card[submited] {
+    display: flex;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .img_box {
+    width: 3rem;
+    height: 3rem;
+    padding: 1rem;
+    background-color: var(--dark_blue);
+    border-radius: 50%;
+}
+
+.card .title {
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--white);
+}
+
+.card .desc {
+    color: var(--light_grey);
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.starts {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.starts .start {
+    background-color: var(--dark_blue);
+    color: var(--light_grey);
+    font-weight: 700;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+}
+
+.start:hover {
+    background-color: var(--white);
+    color: var(--dark_blue);
+}
+
+.start:active,
+.start:focus {
+    background-color: var(--orange);
+    color: var(--dark_blue);
+}
+
+.submit_button {
+    color: var(--very_dark_blue);
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--orange);
+    border-radius: 2rem;
+}
+
+.submit_button:hover {
+    background-color: var(--white);
+}
+
+.card[submited] {
+    align-items: center;
+}
+
+.card .hero_img {
+    width: 10rem;
+    height: 6.75rem;
+}
+
+.card span:not(#selected) {
+    color: var(--orange);
+    padding: 0.25rem 1.25rem;
+    background-color: var(--dark_blue);
+    width: fit-content;
+    border-radius: 1rem;
+}
+.card[submited] .desc {
+    text-align: center;
+}
+@media (max-width:1024px) {
+    html,body {
+        font-size: 14px;
+    }
+    .card{
+        max-width: 50vw;
+    }
+}
+@media (max-width:767px) {
+    html,body {
+        font-size: 12px;
+    }
+    .card{
+        max-width: 75vw;
+    }
+}
+@media (max-width:375px) {
+    html,body {
+        font-size: 10px;
+    }
+    .card{
+        max-width: 90vw;
+    }
 }
